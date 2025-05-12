@@ -38,12 +38,7 @@ pipeline {
 
     stage('SonarCloud Analysis') {
       steps {
-        sh '''
-          curl -sSLo sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
-          unzip -q sonar-scanner.zip
-          export PATH=$PATH:$(pwd)/sonar-scanner-5.0.1.3006-linux/bin
-          sonar-scanner
-        '''
+        sh 'sonar-scanner'
       }
     }
   }
